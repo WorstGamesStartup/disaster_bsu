@@ -3,9 +3,13 @@
 [ext_resource path="res://Player_1.gd" type="Script" id=1]
 [ext_resource path="res://Animation_sheets/Character_Sheets.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=5]
+resource_name = "Idle"
+loop = true
+
+[sub_resource type="Animation" id=4]
 resource_name = "LefttoRight"
-length = 0.5
+length = 0.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -14,26 +18,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.5, 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 5, 0, 1, 2, 3, 4, 5 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "skip"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.7, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
+"values": [ 3, 4, 5 ]
 }
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -46,11 +34,11 @@ script = ExtResource( 1 )
 scale = Vector2( 0.113266, 0.113266 )
 texture = ExtResource( 2 )
 hframes = 6
-frame = 1
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/LefttoRight = SubResource( 1 )
-anims/skip = SubResource( 2 )
+anims/Idle = SubResource( 5 )
+anims/LefttoRight = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 82.8109 )
