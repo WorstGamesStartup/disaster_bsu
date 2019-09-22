@@ -2,15 +2,20 @@ extends KinematicBody2D
 
 var gravity_force = 100
 var move_speed = 400
+var facing_left = false
 var velocity = Vector2()
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
-		$Body.set_flip_h(true)
+		if !facing_left:
+			$".".scale.x *= -1
+		facing_left = true
 		velocity.x -= move_speed
 	if Input.is_action_pressed("move_right"):
-		$Body.set_flip_h(false)
+		if facing_left:
+			$".".scale.x *= -1
+		facing_left = false
 		velocity.x += move_speed
 	
 	if velocity.x != 0:
