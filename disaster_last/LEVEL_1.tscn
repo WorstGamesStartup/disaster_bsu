@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8596.26, 10 )
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_1" type="StaticBody2D"]
 position = Vector2( -1.81064, 1.73707 )
 
 [node name="TimerInterface" parent="." instance=ExtResource( 1 )]
@@ -36,12 +36,9 @@ scale = Vector2( 0.242, 0.242 )
 z_index = -1
 texture = ExtResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 0, 590.223 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
-
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 115.311, 424.171 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 590.223 )
+shape = SubResource( 1 )
