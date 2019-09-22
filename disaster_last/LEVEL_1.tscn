@@ -33,8 +33,14 @@ z_index = -1
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1453.21, 379.648 )
+position = Vector2( 104.486, 337.501 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 590.223 )
 shape = SubResource( 1 )
+
+[node name="camera_limit" type="Node2D" parent="."]
+position = Vector2( 0, 593.138 )
+
+[node name="camera_limit2" type="Node2D" parent="."]
+position = Vector2( 3680.6, 593.138 )

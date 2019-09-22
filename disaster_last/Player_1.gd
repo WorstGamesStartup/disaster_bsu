@@ -1,9 +1,17 @@
 extends KinematicBody2D
 
-var gravity_force = 100
+var gravity_force = 400
 var move_speed = 400
 var facing_left = false
 var velocity = Vector2()
+
+
+func _ready():
+	var limit = get_parent().get_node("camera_limit").position
+	$Camera2D.limit_left = limit.x
+	$Camera2D.limit_bottom = limit.y
+	var limit2 = get_parent().get_node("camera_limit2").position
+	$Camera2D.limit_right = limit2.x
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
