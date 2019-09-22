@@ -4,19 +4,19 @@ var gravity_force = 100
 var move_speed = 400
 var velocity = Vector2()
 
-func _ready():
-	$AnimationPlayer.play("LefttoRight")
-	
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
+		$Body.set_flip_h(true)
 		velocity.x -= move_speed
 	if Input.is_action_pressed("move_right"):
+		$Body.set_flip_h(false)
 		velocity.x += move_speed
 	
-	if velocity.x > 0.1 or velocity.x < 0.1:
+	if velocity.x != 0:
 		$AnimationPlayer.play("LefttoRight")
 	else:
-		$AnimationPlayer.stop(true)
+		$AnimationPlayer.stop(true)	
+		
 	velocity.y += gravity_force
 	move_and_slide(velocity)
