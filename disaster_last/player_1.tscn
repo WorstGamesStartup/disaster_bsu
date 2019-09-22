@@ -1,16 +1,53 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Disaster/BG/player_1.png" type="Texture" id=1]
+[ext_resource path="res://Animation_sheets/Character_Sheets.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.0616, 86.8623 )
+[sub_resource type="Animation" id=1]
+resource_name = "LefttoRight"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5 ]
+}
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[sub_resource type="Animation" id=2]
+resource_name = "skip"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="Body" type="Sprite" parent="."]
+scale = Vector2( 0.113266, 0.113266 )
+texture = ExtResource( 1 )
+hframes = 6
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/LefttoRight = SubResource( 1 )
+anims/skip = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 50.5851 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.24, 0.24 )
-texture = ExtResource( 1 )
+shape = SubResource( 3 )

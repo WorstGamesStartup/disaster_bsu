@@ -4,12 +4,13 @@
 [ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_01.png" type="Texture" id=2]
 [ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_02.png" type="Texture" id=3]
 [ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_03.png" type="Texture" id=4]
-[ext_resource path="res://player_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player_1.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8596.26, 10 )
 
 [node name="Level_1" type="Node2D"]
+position = Vector2( -1.81064, 1.73707 )
 
 [node name="TimerInterface" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
@@ -42,5 +43,5 @@ position = Vector2( 0, 590.223 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 126.567, 438.028 )
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 115.311, 424.171 )
