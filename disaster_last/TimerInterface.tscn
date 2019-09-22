@@ -12,7 +12,7 @@ margin_right = 2006.0
 margin_bottom = 58.0
 
 [node name="Node2D" type="Node2D" parent="HBoxContainer"]
-scale = Vector2( 0.511, 0.25 )
+scale = Vector2( 0.511, 0.3 )
 
 [node name="TextureProgress" type="TextureProgress" parent="HBoxContainer/Node2D"]
 margin_right = 2006.0
