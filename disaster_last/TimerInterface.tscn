@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Disaster/Props/timer_black_under.png" type="Texture" id=1]
 [ext_resource path="res://Disaster/Props/timer_black_fill.png" type="Texture" id=2]
+[ext_resource path="res://Disaster/Controller UI/Joystick_Movements_Rectangle.png" type="Texture" id=3]
+[ext_resource path="res://Disaster/Controller UI/Joystick_Movements_Circle.png" type="Texture" id=4]
 
 [node name="TimerInterface" type="Control"]
 anchor_right = 1.0
@@ -20,3 +22,20 @@ margin_bottom = 58.0
 value = 20.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 273.5
+margin_top = -185.503
+margin_right = 273.5
+margin_bottom = -185.503
+
+[node name="Joystick_Movements_Rectangle" type="Sprite" parent="VBoxContainer"]
+position = Vector2( -70.8988, 51.7231 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="Joystick_Movements_Circle" type="Sprite" parent="VBoxContainer/Joystick_Movements_Rectangle"]
+modulate = Color( 1, 1, 1, 0.341176 )
+texture = ExtResource( 4 )
