@@ -45,12 +45,13 @@ extents = Vector2( 65.0753, 65.3535 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 500, 0 )
-initial_velocity = -200.0
+initial_velocity = -50.0
 angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+linear_accel = 100.0
 angle = 311.8
-scale = 0.07
+scale = 0.1
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -59,7 +60,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.113266, 0.113266 )
 texture = ExtResource( 2 )
 hframes = 4
-frame = 3
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 5 )
@@ -75,8 +76,10 @@ limit_smoothed = true
 smoothing_enabled = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( -30.0633, 50.1055 )
+position = Vector2( 0.223907, 50.1055 )
+rotation = 0.932795
 amount = 4
+lifetime = 0.5
 randomness = 0.1
 local_coords = false
 draw_order = 1
