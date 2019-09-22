@@ -1,21 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02.png" type="Texture" id=1]
-[ext_resource path="res://Disaster/BG/player_1.png" type="Texture" id=2]
-[ext_resource path="res://TimerInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Disaster/BG/player_1.png" type="Texture" id=1]
+[ext_resource path="res://TimerInterface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_01.png" type="Texture" id=3]
+[ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_02.png" type="Texture" id=4]
+[ext_resource path="res://Disaster/BG/BG_fire_scene_prototype_02_03.png" type="Texture" id=5]
 
 [node name="Level_1" type="Node2D"]
 
-[node name="BG_fire_scene_prototype_02" type="Sprite" parent="."]
-position = Vector2( 1790.07, 295.348 )
+[node name="player_1" type="Sprite" parent="."]
+position = Vector2( 104.996, 436.713 )
 scale = Vector2( 0.245125, 0.245125 )
+z_index = 1
 texture = ExtResource( 1 )
 
-[node name="player_1" type="Sprite" parent="."]
-position = Vector2( 201.252, 430.621 )
-scale = Vector2( 0.245125, 0.245125 )
-texture = ExtResource( 2 )
-
-[node name="TimerInterface" parent="." instance=ExtResource( 3 )]
+[node name="TimerInterface" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -1.43198
+margin_right = -1.43198
+
+[node name="BG_fire_scene_prototype_02_01" type="Sprite" parent="."]
+position = Vector2( 441.688, 300.528 )
+scale = Vector2( 0.242, 0.242 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="BG_fire_scene_prototype_02_02" type="Sprite" parent="."]
+position = Vector2( 1549.45, 300.528 )
+scale = Vector2( 0.242, 0.242 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="BG_fire_scene_prototype_02_03" type="Sprite" parent="."]
+position = Vector2( 2951.95, 300.528 )
+scale = Vector2( 0.242, 0.242 )
+z_index = -1
+texture = ExtResource( 5 )
