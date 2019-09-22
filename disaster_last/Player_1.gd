@@ -20,8 +20,10 @@ func _physics_process(delta):
 	
 	if velocity.x != 0:
 		$AnimationPlayer.play("LefttoRight")
+		$Particles2D.emitting = true
 	else:
-		$AnimationPlayer.stop(true)	
+		$AnimationPlayer.play("Idle")	
+		$Particles2D.emitting = false
 		
 	velocity.y += gravity_force
 	move_and_slide(velocity)
