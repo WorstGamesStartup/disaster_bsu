@@ -13,10 +13,6 @@ extents = Vector2( 8596.26, 10 )
 position = Vector2( -1.81064, 1.73707 )
 
 [node name="TimerInterface" parent="." instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -1.43198
-margin_right = -1.43198
 
 [node name="BG_fire_scene_prototype_02_01" type="Sprite" parent="."]
 position = Vector2( 441.688, 300.528 )
@@ -37,7 +33,7 @@ z_index = -1
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 115.311, 424.171 )
+position = Vector2( 1453.21, 379.648 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 590.223 )
