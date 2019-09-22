@@ -60,7 +60,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.113266, 0.113266 )
 texture = ExtResource( 2 )
 hframes = 4
-frame = 2
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 5 )
